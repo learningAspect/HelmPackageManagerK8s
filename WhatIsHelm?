@@ -1,0 +1,32 @@
+############  Helm 3 ###############
+1. Introduced first time in 2015
+2. Helm helps you manage K8s application with helm charts which help u define, install and upgrade even most complex application.
+3. Helm is K8s equivalent of yum and ppt
+4. Helm is now an official K8s project and part of CCNF now.
+5. Main building block is helm chart. These chart defines a configurable set of dynamically generated resources.
+6. The chart can either be stored locally or can be fetched from remote repo
+6. Helm has repo name as helm hub. same way docker has docker hub.
+
+
+
+Why Use Helm?
+Writing and maintaining K8s yaml manifests for all the required K8s objects can be time consuming and tedious task for the simplest of deployment, you would need atleast 3 YAML manifests with duplicated and and hardcoded values.
+
+Helm simplifies this process and create a single package that can be advertised to your cluster.
+
+Helm 3 was released in 2019. Helm K8s automatically maintains the database of all versions of releases. whenever something goes wrong in latest release, rolling back to previous deployment is just command away.
+
+**** Helm Keyword ********
+CHART :- Helm charts are simply K8s manifests combined into single package that can be advertised to cluster.
+OR,
+A chart is a helm package. It contains all the  resource definition necessary to run an application, tools or services inside of K8s cluster.
+
+RELEASE :- A Release is an instance of chart running in K8s cluster. One chart can be installed many times, into the same cluster and each time its installed, a new release is created.
+Helm keep tracks of all chart execution (Install/Upgrade/Execution/Rollback)
+
+REPOSITORY :- Location where package can be stored and shared.
+
+**********  Helm 3 Architecture ********************
+Single service Architecture. Helm 2 was client server architecture. Server was called Tiller. That time K8s did nt have Role Base Acces Control. Thats why Helm 2 had server for more control.
+
+Now only One executable and thats responsible for implementing Helm. No Client Server Split nor is the core processing logic distributed among components.
