@@ -1,0 +1,48 @@
+************* helm commands  ******************
+helm repo :- Interact with chart repo. Helm 3 no longer shipped with default chart repo
+helm repo list
+
+helm repo add <Name> <URL>
+helm repo remove <Name>
+
+helm search //****  for finding charts
+
+for e.g. helm search repo <chart>
+
+helm show //** Information about charts
+
+for e.g. helm show <values/charts/readme/all> <ChartName>
+
+
+helm install //** to install package
+
+for e.g. helm install <release-name> <chart-name>
+
+
+helm install mychart stable/tomcat --wait --timout 10s
+
+helm create //** Chart creation
+
+for e.g. helm create helloworld
+
+**** To download helm ************
+curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/hel...
+chmod 700 get_helm.sh
+./get_helm.sh
+
+To verify the installation use the following command
+which helm
+
+helm version
+Let’s create Our First Helm Chart
+
+
+helm repo add stable https://charts.helm.sh/stable
+
+
+helm install testchart2 stable/tomcat --set service.type=NodePort
+
+to uninstall helm
+which helm ( to see which folder its installed )
+rm -rf /usr/local/bin/helm
+kubectl get all
