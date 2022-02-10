@@ -34,6 +34,19 @@ To verify the installation use the following command
 which helm
 
 helm version
+
+
+
+helm install --wait --timeout 20s testtomcat stable/tomcat
+helm install mychart stable/tomcat --set service.type=NodePort
+helm install testchart stable/tomcat 
+
+helm get  --/** after installation
+helm show  ---/** to show the parameter before chart installation
+
+helm status testchart2
+helm get manifest testchart
+
 Let’s create Our First Helm Chart
 
 
